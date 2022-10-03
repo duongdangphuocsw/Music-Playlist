@@ -1,0 +1,49 @@
+i {
+  font-size: 25px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body::before {
+  background-image: url("https://i.pinimg.com/564x/d3/88/4c/d3884c7daabe848c2104b608fe5f2f2b.jpg");
+  content: "";
+  height: 100%;
+  opacity: 0.8;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.7;
+  background-position-y: -130px;
+}
+
+.container {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.musicPlayer__container {
+  width: 400px;
+  height: 600px;
+  background-color: rgba(143, 109, 109, 0.8);
+  position: absolute;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.header h1 {
+  font-size: 25px;
+}
+.header i {
+  line-height: 60px;
+  margin-left: 10px;
+  margin-right: 10px;
+}/*# sourceMappingURL=index.css.map */
