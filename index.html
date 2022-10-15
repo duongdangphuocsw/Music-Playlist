@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music play</title>
+    <link rel="stylesheet" href="./fontawesome-free-6.1.1-web/css/all.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="./fontawesome-free-6.1.1-web/css/all.css" />
-  <link rel="stylesheet" href="./styles/index.css" />
-</head>
-
-<body>
-  <div class="container">
+  <body>
+    <!-- <div class="container"> -->
     <div class="music-playlist">
-
       <div class="dashboard">
         <div class="header">
           <div class="header__icon">
@@ -28,28 +26,47 @@
           </div>
         </div>
         <div class="cd">
-          <div class="cd__thumb" style="
-                background-image: url('https://i1.sndcdn.com/artworks-m7y4FA1X1GbE-0-t500x500.jpg');
-              "></div>
+          <div
+            class="cd__thumb"
+            style="
+              background-image: url('https://i1.sndcdn.com/artworks-m7y4FA1X1GbE-0-t500x500.jpg');
+            "
+          ></div>
         </div>
         <div class="control">
-          <i class="fa-solid fa-repeat"></i>
-          <i class="fa-sharp fa-solid fa-backward-step"></i>
-          <i class="fa-sharp fa-solid fa-play"></i>
-          <i class="fa-solid fa-forward-step"></i>
-          <i class="fa-solid fa-shuffle"></i>
+          <i class="fa-solid fa-repeat icon-repeat"></i>
+          <i class="fa-sharp fa-solid fa-backward-step icon-back"></i>
+          <div class="btn-toggle-play">
+            <i class="fa-sharp fa-solid fa-play icon-play"></i>
+            <i class="fa-sharp fa-solid fa-pause icon-pause"></i>
+          </div>
+
+          <i class="fa-solid fa-forward-step icon-next"></i>
+          <i class="fa-solid fa-shuffle icon-random"></i>
+        </div>
+        <div class="progress-time">
+          <div class="time-first"><span class="min">0</span>:<span class="second">00</span></div>
+          <div class="time-end">-<span class="min">3</span>:<span class="second">25</span></div>
         </div>
         <div class="progress-bar">
           <input type="range" min="0" max="100" value="0" step="1" />
         </div>
-        <div class="progress-time"></div>
-        <div class="control-music"></div>
-        <div class="volume"></div>
+        <audio src="./assets/songs/anhNhoRa.mp3" id="audio" preload="metadata"></audio>
+        <div class="volume">
+          <div class="volume-icon active">
+            <i class="fa-solid fa-volume-high icon-ableVolume "></i>
+            <i class="fa-sharp fa-solid fa-volume-xmark icon-noneVolume"></i>
+          </div>
+          <input type="range" min="0" max="1" value="1" step="0.1" class="volume-range"/>
+        </div> 
       </div>
       <div class="playlist">
         <div class="song">
           <div class="song__img">
-            <img src="https://i1.sndcdn.com/artworks-m7y4FA1X1GbE-0-t500x500.jpg" alt="">
+            <img
+              src="https://i1.sndcdn.com/artworks-m7y4FA1X1GbE-0-t500x500.jpg"
+              alt=""
+            />
           </div>
 
           <div class="song__information">
@@ -59,11 +76,13 @@
           <div class="song__btn">
             <i class="fa-solid fa-ellipsis"></i>
           </div>
-
         </div>
         <div class="song">
           <div class="song__img">
-            <img src="https://i1.sndcdn.com/artworks-m7y4FA1X1GbE-0-t500x500.jpg" alt="">
+            <img
+              src="https://i1.sndcdn.com/artworks-m7y4FA1X1GbE-0-t500x500.jpg"
+              alt=""
+            />
           </div>
 
           <div class="song__information">
@@ -73,12 +92,11 @@
           <div class="song__btn">
             <i class="fa-solid fa-ellipsis"></i>
           </div>
-
         </div>
       </div>
     </div>
-  </div>
-  <script src="./main.js"></script>
-</body>
 
+    <!-- </div> -->
+    <script src="./main.js"></script>
+  </body>
 </html>
