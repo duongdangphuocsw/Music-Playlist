@@ -1,15 +1,3 @@
-/*
-    1. Render song
-    2. scroll top
-    3.Play/ pause/ seek
-    4. CD rotate
-    5. Next/ prev
-    6. Random
-    7. Next/ Repeat when ended
-    8. Active song
-    9. Scroll active song into view
-    10. Play song when click
-*/
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 const playListBlock = $(".playlist");
@@ -38,103 +26,87 @@ const app = {
   currentIndex: 0,
   songs: [
     {
-      name: "Anh nhớ ra",
+      name: "Anh Nhớ Ra",
       singer: "Vũ",
       path: "./assets/songs/anhNhoRa.mp3",
       image: "./assets/images/anhNhoRa.jpg",
     },
     {
-      name: "Từng là của nhau",
+      name: "Từng Là Của Nhau",
       singer: "Bảo Anh x Vũ",
       path: "./assets/songs/tungLaCuaNhau.mp3",
       image: "./assets/images/tungLaCuaNhau.jpg",
     },
     {
-      name: "Ngày hôm nay của em thế nào",
+      name: "Ngày Hôm Nay Của Em Thế Nào",
       singer: "Huynim",
       path: "./assets/songs/ngayHomNayCuaEmTheNao.mp3",
       image:
         "https://avatar-ex-swe.nixcdn.com/mv/2022/09/07/8/7/a/1/1662520028444_640.jpg",
     },
     {
-      name: "Sinh ra đã là thứ đối lập nhau",
+      name: "Sinh Ra Đã Là Thứ Đối Lập Nhau",
       singer: "Emcee L (Da LAB) ft. Badbies",
       path: "./assets/songs/sinhRaDaLaThuDoiLapNhau.mp3",
       image:
         "https://images.genius.com/37e000e03a925e37eb4b13de2be18179.700x700x1.jpg",
     },
     {
-      name: "Sinh ra đã là thứ đối lập nhau",
-      singer: "Emcee L (Da LAB) ft. Badbies",
-      path: "./assets/songs/sinhRaDaLaThuDoiLapNhau.mp3",
+      name: "Chạy Khỏi Thế Giới Này",
+      singer: "Da LAB, Phương Ly",
+      path: "./assets/songs/chayKhoiTheGioiNay.mp3",
       image:
-        "https://images.genius.com/37e000e03a925e37eb4b13de2be18179.700x700x1.jpg",
+        "https://i.ytimg.com/vi/hYYMF3VtOjE/maxresdefault.jpg",
     },
     {
-      name: "Sinh ra đã là thứ đối lập nhau",
-      singer: "Emcee L (Da LAB) ft. Badbies",
-      path: "./assets/songs/sinhRaDaLaThuDoiLapNhau.mp3",
+      name: "Waiting For You",
+      singer: "MONO, Onionn",
+      path: "./assets/songs/waitingForYou.mp3",
       image:
-        "https://images.genius.com/37e000e03a925e37eb4b13de2be18179.700x700x1.jpg",
+        "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/e/7/7/2/e772358978fef8a02eefd34f6a4ca6f3.jpg",
     },
     {
-      name: "Sinh ra đã là thứ đối lập nhau",
-      singer: "Emcee L (Da LAB) ft. Badbies",
-      path: "./assets/songs/sinhRaDaLaThuDoiLapNhau.mp3",
+      name: "Gói Những Bông Hoa Nhỏ Tặng Em",
+      singer: "Chủ Tịch Kim",
+      path: "./assets/songs/goiNhungBongHoaNhoTangEm.mp3",
       image:
-        "https://images.genius.com/37e000e03a925e37eb4b13de2be18179.700x700x1.jpg",
+        "https://avatar-ex-swe.nixcdn.com/song/2020/06/11/2/a/2/1/1591865957016.jpg",
     },
     {
-      name: "Sinh ra đã là thứ đối lập nhau",
-      singer: "Emcee L (Da LAB) ft. Badbies",
-      path: "./assets/songs/sinhRaDaLaThuDoiLapNhau.mp3",
+      name: "Vùng Ký Ức",
+      singer: "Chillies",
+      path: "./assets/songs/vungKyUc.mp3",
       image:
-        "https://images.genius.com/37e000e03a925e37eb4b13de2be18179.700x700x1.jpg",
+        "https://avatar-ex-swe.nixcdn.com/song/2020/05/14/c/6/d/9/1589425750636.jpg",
     },
     {
-      name: "Sinh ra đã là thứ đối lập nhau",
-      singer: "Emcee L (Da LAB) ft. Badbies",
-      path: "./assets/songs/sinhRaDaLaThuDoiLapNhau.mp3",
+      name: "Vaicaunoicokhiennguoithaydoi",
+      singer: "GREY-D, Tlinh",
+      path: "./assets/songs/Vaicaunoicokhiennguoithaydoi.mp3",
       image:
-        "https://images.genius.com/37e000e03a925e37eb4b13de2be18179.700x700x1.jpg",
+        "https://avatar-ex-swe.nixcdn.com/song/2022/06/20/f/c/8/c/1655699296267.jpg",
     },
     {
-      name: "Sinh ra đã là thứ đối lập nhau",
-      singer: "Emcee L (Da LAB) ft. Badbies",
-      path: "./assets/songs/sinhRaDaLaThuDoiLapNhau.mp3",
+      name: "đứa nào làm em buồn?",
+      singer: "Phúc Du, Hoàng Dũng",
+      path: "./assets/songs/duaNaoLamEmBuon.mp3",
       image:
-        "https://images.genius.com/37e000e03a925e37eb4b13de2be18179.700x700x1.jpg",
+       "https://avatar-ex-swe.nixcdn.com/song/2022/08/06/e/9/a/0/1659718819642.jpg",
     },
     {
-      name: "Sinh ra đã là thứ đối lập nhau",
-      singer: "Emcee L (Da LAB) ft. Badbies",
-      path: "./assets/songs/sinhRaDaLaThuDoiLapNhau.mp3",
+      name: "Tại Vì Sao",
+      singer: "MCK",
+      path: "./assets/songs/TaiViSao.mp3",
       image:
-        "https://images.genius.com/37e000e03a925e37eb4b13de2be18179.700x700x1.jpg",
+        "https://avatar-ex-swe.nixcdn.com/song/2022/09/23/2/3/3/a/1663924304766.jpg",
     },
     {
-      name: "Sinh ra đã là thứ đối lập nhau",
-      singer: "Emcee L (Da LAB) ft. Badbies",
-      path: "./assets/songs/sinhRaDaLaThuDoiLapNhau.mp3",
+      name: "Mặt Mộc (Acoustic Version)",
+      singer: "Phạm Nguyên Ngọc, Vanh, BMZ",
+      path: "./assets/songs/MatMoc.mp3",
       image:
-        "https://images.genius.com/37e000e03a925e37eb4b13de2be18179.700x700x1.jpg",
+        "https://avatar-ex-swe.nixcdn.com/song/2022/08/27/c/7/3/9/1661571445655.jpg",
     },
-    {
-      name: "Sinh ra đã là thứ đối lập nhau",
-      singer: "Emcee L (Da LAB) ft. Badbies",
-      path: "./assets/songs/sinhRaDaLaThuDoiLapNhau.mp3",
-      image:
-        "https://images.genius.com/37e000e03a925e37eb4b13de2be18179.700x700x1.jpg",
-    },
-    {
-      name: "Sinh ra đã là thứ đối lập nhau",
-      singer: "Emcee L (Da LAB) ft. Badbies",
-      path: "./assets/songs/sinhRaDaLaThuDoiLapNhau.mp3",
-      image:
-        "https://images.genius.com/37e000e03a925e37eb4b13de2be18179.700x700x1.jpg",
-    },
-
-    // xoa
   ],
   defineProperties: function () {
     Object.defineProperty(this, "currentSong", {
